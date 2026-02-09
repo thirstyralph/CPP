@@ -37,38 +37,34 @@ class Contact{
 		std::string	PhoneNumber;
 		std::string	DarkestSecret;
 	public:
-	void	Contact(){
-		std::cout << "Type in First Name: ";
-		std::getline(std::cin, this->arr[last].FirstName);
-		std::cout << "Type in Last Name: ";
-		std::getline(std::cin, this->arr[last].LastName);
-		std::cout << "Type in NickName: ";
-		std::getline(std::cin, this->arr[last].NickName);
-		std::cout << "Type in Phone number: ";
-		std::getline(std::cin, this->arr[last].PhoneNumber);
-		std::cout << "Type in their DARKEST SECRET: ";
-		std::getline(std::cin, this->arr[last].DarkestSecret);
-		if (this->top < 7)
-			++this->top;
-		if (this->last < this->top)
-			++this->last;
-		else
-			this->last = 0;
+		void	Init(){
+			std::cout << "Type in First Name: ";
+			std::getline(std::cin, this->FirstName);
+			std::cout << "Type in Last Name: ";
+			std::getline(std::cin, this->LastName);
+			std::cout << "Type in NickName: ";
+			std::getline(std::cin, this->NickName);
+			std::cout << "Type in Phone number: ";
+			std::getline(std::cin, this->PhoneNumber);
+			std::cout << "Type in their DARKEST SECRET: ";
+			std::getline(std::cin, this->DarkestSecret);
+			}
+
+		std::string	GetName(){
+			return (this->FirstName);
 		}
-	void	GetName(){
-		std::cout << this->FirstName;
-		std::cout << this->LastName;
-	}
-	void	display_contact()
-	{
-		PrintColumn(this->FirstName);
-		PrintColumn(this->LastName);
-		PrintColumn(this->NickName);
-		PrintColumn(this->PhoneNumber);
-		PrintColumn(this->DarkestSecret);
-		std::cout << "\n";
-	}
+
+		void	display_contact()
+		{
+			PrintColumn(this->FirstName);
+			PrintColumn(this->LastName);
+			PrintColumn(this->NickName);
+			PrintColumn(this->PhoneNumber);
+			PrintColumn(this->DarkestSecret);
+			std::cout << "\n";
+		}
 };
+
 /*
 	no entiendo esto, no se que deberia de ser publico y que deberia de ser privado
 */
@@ -81,15 +77,15 @@ class PhoneBook{
 			this->top = 0;
 			this->last = 0;
 		}
-		void	search(std::string FirstName){
-			for (int i = 0; i < top; ++i){
-				if (arr[i].FirstName == FirstName)
-					std::cout << "found ya\n";
-			}
-		}
 		void	Add(){
 			std::cout << "Adding Contact number " << this->last + 1 << "\n";
-			contact(
+			arr[top].Init();
+			if (this->top < 7)
+				++this->top;
+			if (this->last < this->top)
+				++this->last;
+			else
+			this->last = 0;
 		}
 		void	Search(){
 			std::string	target;
@@ -98,7 +94,7 @@ class PhoneBook{
 			std::cout << "Write desired name: ";
 			std::getline(std::cin, target);
 			while (i <= this->top){
-				if (this->arr[i].FirstName == target){
+				if (this->arr[i].GetName() == target){
 					this->arr[i].display_contact();
 				}
 				++i;
