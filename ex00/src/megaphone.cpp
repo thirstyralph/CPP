@@ -17,9 +17,7 @@ int	main(int argc, char **argv)
 			argv[argv_idx][str_idx] = std::toupper(argv[argv_idx][str_idx]);
 		}
 		std::cout << argv[argv_idx];
-		if (argv_idx < argc - 1)
-			std::cout << " ";
-		else
+		if (!(argv_idx < argc - 1))
 			std::cout << "\n";
 	}
 	return (0);
