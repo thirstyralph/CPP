@@ -1,3 +1,5 @@
+#include <string>
+
 class	Weapon {
 	public:
 		Weapon();
@@ -5,4 +7,4 @@ class	Weapon {
 		void		setType(std::string Type);
 	private:
 		std::string	type;
-}
+};
