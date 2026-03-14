@@ -1,4 +1,4 @@
-NAME    := Hi_ThisisBrain
+NAME    := Violence
 CC      := c++
 CFLAGS  := -Wextra -Wall -Werror -g -std=c++98
 SRC_DIR := src

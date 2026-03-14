@@ -1,0 +1,129 @@
+#include "HumanA.hpp"
+/*
+HumanA::HumanA(void)	{
+	Weapon weapon("a rock I just found");
+	this->name = "Jimbo";
+	this->weapon = weapon;
+};
+*/
+HumanA::HumanA(std::string name, Weapon& weapon)	
+: name(name), weapon(weapon)
+{}
+
+void	HumanA::attack(void)	{
+	std::cout << this->name << " attacks with " << this->weapon.getType() << '\n';
+};
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+#include <string>
+#include <iostream>
+#include "Weapon.hpp"
+
+class	HumanA {
+	private:
+		Weapon&		weapon;
+		std::string	name;
+	public:
+	//				HumanA(void);
+					HumanA(std::string name, Weapon& weapon);
+		void		attack(void);
+};
+
+#endif
+#include "HumanB.hpp"
+
+HumanB::HumanB(){
+	this->name = "General Generic name";
+}
+
+HumanB::HumanB(std::string name){
+	this->name = name;
+};
+
+HumanB::HumanB(std::string name, Weapon &weapon){
+	this->name = name;
+	this->weapon = &weapon;
+};
+
+void	HumanB::setWeapon(Weapon &weapon){
+	this->weapon = &weapon;
+};
+
+void	HumanB::attack(void)	{
+	std::cout << this->name << " attacks with " << this->weapon->getType() << "\n";
+}
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
+
+#include <string>
+#include <iostream>
+#include "Weapon.hpp"
+
+class	HumanB {
+	public:
+					HumanB();
+					HumanB(std::string name);
+					HumanB(std::string name, Weapon& weapon);
+		void		setWeapon(Weapon& weapon);
+		void		attack(void);
+	private:
+		Weapon		*weapon;
+		std::string	name;
+};
+
+#endif
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+
+
+int main()
+{
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
+	return 0;
+}
+#include "Weapon.hpp"
+
+Weapon::Weapon(){
+	this->type = "Stick from the floor";
+}
+
+Weapon::Weapon(std::string type){
+	this->type = type;
+}
+
+std::string	Weapon::getType(){
+	return (this->type);
+}
+
+void	Weapon::setType(std::string type){
+	this->type = type;
+}
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+#include <string>
+
+class	Weapon {
+	public:
+					Weapon();
+					Weapon(std::string type);
+		std::string	getType();
+		void		setType(std::string Type);
+	private:
+		std::string	type;
+};
+#endif
