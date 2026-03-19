@@ -1,4 +1,5 @@
 #include "HumanA.hpp"
+
 /*
 HumanA::HumanA(void)	{
 	Weapon weapon("a rock I just found");

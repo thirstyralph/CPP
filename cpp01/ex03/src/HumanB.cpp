@@ -1,12 +1,12 @@
 #include "HumanB.hpp"
 
 HumanB::HumanB()
-: weapon(nullptr)	{
+: weapon(NULL)	{
 	this->name = "General Generic name";
 }
 
 HumanB::HumanB(std::string name)
-: weapon(nullptr)	{
+: weapon(NULL)	{
 	this->name = name;
 };
 
