@@ -11,7 +11,7 @@ std::string	replaceAll(	std::string const& text,
 	while (
 }
 
-
+int	main(int argc, char **argv)
 {
 	if (argc != 4)
 		return (2);
