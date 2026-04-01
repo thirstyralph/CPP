@@ -1,16 +1,15 @@
 NAME    := Sedim
 CC      := c++
 CFLAGS  := -Wextra -Wall -Werror -g -std=c++98
-SRC_DIR := src
 OBJ_DIR := obj
 
-INC	    := $(wildcard $(SRC_DIR)/*.hpp)
-SRCS    := $(wildcard $(SRC_DIR)/*.cpp)
+INC	    := $(wildcard ./*.hpp)
+SRCS    := $(wildcard ./*.cpp)
 OBJS    := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC)
+$(OBJ_DIR)/%.o: ./%.cpp $(INC)
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
