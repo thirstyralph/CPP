@@ -1,47 +1,38 @@
 #include "Fixed.hpp"
 
 int	Fixed::getRawBits() const{ 
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->Value);
 };
 
 void	Fixed::setRawBits(int Value) { 
-	std::cout << "setRawBits member function called" << std::endl;
 	this->Value = Value;
 };
 
 //Default constructor
 Fixed::Fixed(){
-	std::cout << "Default constructor called" << std::endl;
 	this->Value = 0;
 };
 
 //Default destructor 
 Fixed::~Fixed(){
-	std::cout << "Default destructor called" << std::endl;
 };
 
 //Copy constructor
 Fixed::Fixed(const Fixed &oldFixed) {
-	std::cout << "Copy constructor called" << std::endl;
 	this->Value = oldFixed.getRawBits();
 };
 
-//comparison overload
-/*
-//by referece
-Fixed& Fixed::operator=(const Fixed& oldFixed) {
+Fixed Fixed::operator=(const Fixed oldFixed) {
 	if (this != &oldFixed) {
 		this->Value = oldFixed.getRawBits();
 	}
 	return *this;
 };
-*/
 
-//by value 
-Fixed Fixed::operator=(const Fixed oldFixed) {
-	std::cout << "Copy assignment operator called" << std::endl;
+Fixed Fixed::operator>(const Fixed oldFixed) {
+	int	
 	if (this != &oldFixed) {
+		if (this->Value >> 8 > oldFixed.getRawBits() >> 8)
 		this->Value = oldFixed.getRawBits();
 	}
 	return *this;

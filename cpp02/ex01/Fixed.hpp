@@ -18,16 +18,16 @@ class	Fixed {
 		//Fixed& operator=(const Fixed& oldFixed);
 		//By value
 		Fixed operator=(const Fixed oldFixed);
-		fixed operator>(const fixed oldfixed);
-		fixed operator<(const fixed oldfixed);
-		fixed operator>=(const fixed oldfixed);
-		fixed operator<=(const fixed oldfixed);
-		fixed operator==(const fixed oldfixed);
-		fixed operator!=(const fixed oldfixed);
-		fixed operator*(const fixed oldfixed);
-		fixed operator+(const fixed oldfixed);
-		fixed operator-(const fixed oldfixed);
-		fixed operator/(const fixed oldfixed);
+		Fixed operator>(const Fixed oldfixed);
+		Fixed operator<(const Fixed oldfixed);
+		Fixed operator>=(const Fixed oldfixed);
+		Fixed operator<=(const Fixed oldfixed);
+		Fixed operator==(const Fixed oldfixed);
+		Fixed operator!=(const Fixed oldfixed);
+		Fixed operator*(const Fixed oldfixed);
+		Fixed operator+(const Fixed oldfixed);
+		Fixed operator-(const Fixed oldfixed);
+		Fixed operator/(const Fixed oldfixed);
 		//ValueGetter
 		int					getRawBits() const;
 		void				setRawBits(int Value);
