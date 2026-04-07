@@ -16,23 +16,11 @@ class	Fixed {
 		Fixed(const Fixed &oldFixed);
 		//Destructor
 		~Fixed();
-		//Copy assigment operator
-		Fixed operator=(const Fixed oldFixed);
-		//comparison operators
-		bool operator>(const Fixed oldfixed);
-		bool operator<(const Fixed oldfixed);
-		bool operator>=(const Fixed oldfixed);
-		bool operator<=(const Fixed oldfixed);
-		bool operator==(const Fixed oldfixed);
-		bool operator!=(const Fixed oldfixed);
-		//arithmetic operators
-		Fixed operator*(const Fixed oldfixed);
-		Fixed operator+(const Fixed oldfixed);
-		Fixed operator-(const Fixed oldfixed);
-		Fixed operator/(const Fixed oldfixed);
 		//ValueGetter
 		int					getRawBits() const;
-		//int					getFractionalPart() const;
 		float				toFloat() const;
+		int					toInt() const;
 		void				setRawBits(int Value);
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
