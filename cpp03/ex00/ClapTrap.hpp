@@ -1,11 +1,14 @@
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 #include <string>
+#include <iostream>
 
 class ClapTrap {
 	private:
-		std::string	name;
-		int			hitPoints;
-		int			energyPoints;
-		int			attackDamage;
+		std::string		name;
+		unsigned int	hitPoints;
+		unsigned int	energyPoints;
+		unsigned int	attackDamage;
 	public:
 		//default constructor
 					ClapTrap();
@@ -15,11 +18,12 @@ class ClapTrap {
 					~ClapTrap();
 		//Copy assignment operator
 		ClapTrap	&operator=(const ClapTrap &src);
-		std::string	getName();
-		int			getHitPoints();
-		int			getEnergyPoints();
-		int			getAttackDamage();
+		std::string	getName() const;
+		unsigned int			getHitPoints() const;
+		unsigned int			getEnergyPoints() const ;
+		unsigned int			getAttackDamage() const;
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
 };
+#endif
