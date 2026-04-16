@@ -28,7 +28,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& src) {
 	}
 	return (*this);
 }
-
+/*	----------------- Getters -------------------------	*/
 unsigned int	ClapTrap::getHitPoints() const{
 	return (this->hitPoints);
 }
@@ -44,7 +44,25 @@ unsigned int	ClapTrap::getAttackDamage() const{
 std::string	ClapTrap::getName() const{
 	return (this->name);
 }
+/*	----------------- Setters -------------------------	*/
 
+void	ClapTrap::setHitPoints(const unsigned int hp){
+	this->hitPoints = hp;
+}
+
+void	ClapTrap::setEnergyPoints(const unsigned int ep) {
+	this->energyPoints = ep;
+}
+
+void	ClapTrap::setAttackDamage(const unsigned int ad) {
+	this->attackDamage = ad;
+}
+
+void	ClapTrap::setName(const std::string newName) {
+	this->name = newName;
+}
+
+/*	----------------- Actions -------------------------	*/
 void	ClapTrap::attack(const std::string& target) {
 	std::cout << this->name << " attacks " << target << " causing " << attackDamage << " points of damage!" << std::endl;
 }
@@ -62,4 +80,10 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 
 void	ClapTrap::beRepaired(unsigned int amount) {
 	this->energyPoints += amount;
+}
+
+void	ClapTrap::definePoints(unsigned int hp, unsigned int ep, unsigned int ad){
+	this->hitPoints = hp;
+	this->energyPoints = ep;
+	this->attackDamage = ad;
 }
