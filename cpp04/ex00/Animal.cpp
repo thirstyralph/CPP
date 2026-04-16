@@ -5,20 +5,21 @@ Animal::Animal() {
 }
 
 Animal::Animal(const std::string type){
-	this->type = "worm";
+	this->type = type;
 }
 
 Animal::~Animal() {
+	std::cout << "Animal has been exterminated" << std::endl;
 }
 
 /* ---- Setters ----- */
-void	setName(const std::string newName) {
-	this->name = newName;
+void	Animal::setType(const std::string newType) {
+	this->type = newType;
 }
 
 /* ---- Getters ----- */
-std::string	getName() {
-	return (this->name);
+std::string	Animal::getType() {
+	return (this->type);
 }
 
 Animal	Animal::&operator=(const Animal& old) {

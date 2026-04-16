@@ -2,6 +2,7 @@
 # define ANIMAL_HPP
 
 #include <string>
+#include <iostream>
 
 class	Animal {
 	public:
@@ -10,9 +11,9 @@ class	Animal {
 					~Animal();
 		Animal		&operator=(const Animal& old);
 		/*---- setters ----*/
-		void		setName(const std::string	name);
+		void		setType(const std::string	name);
 		/*---- getters ----*/
-		std::string	getName();
+		std::string	getType();
 	private:
 		std::string	type;
 };
