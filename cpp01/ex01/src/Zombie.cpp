@@ -11,13 +11,21 @@ Zombie::Zombie() {
 Zombie::Zombie(std::string name) {
 	this->name = name;
 }
-
 /*	Destructor */
 Zombie::~Zombie(){
 	std::cout << this->name << " has been slain\n";
 }
 
-/* name setter */
-void	Zombie::setName(std::string name) {
-	this->name = name;
+/*	name getter */
+std::string	Zombie::getName(void) const {
+	return (this->name);
+}
+
+/*	name setter */
+void	Zombie::setName(const std::string newName){
+	this->name = newName;
+}
+
+void	Zombie::announce(void) {
+	std::cout << this->getName() << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

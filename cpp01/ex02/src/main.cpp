@@ -21,5 +21,15 @@ int	main(void)
 	std::cout << *stringPTR << std::endl;
 	// Value pointed to by stringREF
 	std::cout << stringREF << std::endl;
+
+    //Change to reference
+    *stringPTR = "PATATA";
+
+    // Value of the string variable
+	std::cout << Brain << std::endl;
+	// Value pointed to by stringPTR
+	std::cout << *stringPTR << std::endl;
+	// Value pointed to by stringREF
+	std::cout << stringREF << std::endl;
 	return (0);
 }

@@ -61,16 +61,16 @@ int	main(int argc, char **argv)
 		printUsage();
 		return (2);
 	}
-	std::string		filename(argv[1]);
-	std::string&	filenameRef = filename;
-	std::string		s1(argv[2]);
-	std::string		s2(argv[3]);
+	std::string			filename(argv[1]);
+	std::string&		filenameRef = filename;
+	std::string			s1(argv[2]);
+	std::string			s2(argv[3]);
 	std::string&		s1Ref = s1;
 	std::string&		s2Ref = s2;
-	std::ifstream	inputFile(argv[1]);
-	std::string		line;
-	std::string		output;
-	std::string&	outputRef = output;
+	std::ifstream		inputFile(argv[1]);
+	std::string			line;
+	std::string			output;
+	std::string&		outputRef = output;
 
 	if (readFile(filenameRef, outputRef) == false)
 		return (1);

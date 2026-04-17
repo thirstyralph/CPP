@@ -5,8 +5,9 @@ void	randomChump(std::string name){
 
 	zombie.announce();
 }
-
+/*
 void Zombie::announce() {
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ...\n";
 }
 
+*/
