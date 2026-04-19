@@ -1,6 +1,8 @@
 #include <iostream>
+/*
 #include <string>
 #include <cmath>
+*/
 
 class	Fixed {
 	//OCF
@@ -16,11 +18,13 @@ class	Fixed {
 		Fixed(const Fixed &oldFixed);
 		//Destructor
 		~Fixed();
+		//equal sign overload
+		Fixed &operator=(const Fixed &rhs);
 		//ValueGetter
 		int					getRawBits() const;
+		void				setRawBits(int Value);
 		float				toFloat() const;
 		int					toInt() const;
-		void				setRawBits(int Value);
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
