@@ -20,5 +20,8 @@ void	HumanB::setWeapon(Weapon &weapon){
 };
 
 void	HumanB::attack(void)	{
-	std::cout << this->name << " attacks with " << this->weapon->getType() << "\n";
+	if (this->weapon == NULL)
+		std::cout << this->name << " Slaps the oponent in the face" << std::endl;
+	else
+		std::cout << this->name << " attacks with " << this->weapon->getType() << std::endl;
 }
