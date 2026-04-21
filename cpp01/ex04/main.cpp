@@ -3,8 +3,7 @@
 #include <fstream>
 
 /*
-	AWFUL MESS
-	Reads a file, writes its content into s and
+	reads file content into 'content'
 	returns:
 		true: Succesful read
 		false: read failed
@@ -21,8 +20,6 @@ bool	readFile(const std::string &filename, std::string &content)	{
 
 /*
 	AWFUL MESS
-	Writes into a file, writes the content of the string "content"
-	into the "filename" file;
 	returns:
 		true: Succesful write
 		false: write failed
@@ -61,21 +58,16 @@ int	main(int argc, char **argv)
 		printUsage();
 		return (2);
 	}
-	std::string			filename(argv[1]);
-	std::string&		filenameRef = filename;
-	std::string			s1(argv[2]);
-	std::string			s2(argv[3]);
-	std::string&		s1Ref = s1;
-	std::string&		s2Ref = s2;
-	std::ifstream		inputFile(argv[1]);
-	std::string			line;
-	std::string			output;
-	std::string&		outputRef = output;
+	std::string	filename(argv[1]);
+	std::string	s1(argv[2]);
+	std::string	s2(argv[3]);
+	std::string	fileContent;
 
-	if (readFile(filenameRef, outputRef) == false)
+	if (!readFile(filename, fileContent))
 		return (1);
-	output = replaceWord(s1Ref, s2Ref, outputRef);
-	if (writeFile(filenameRef.append(".replace"), outputRef) == false)
+	std::string	replaced = replaceWord(s1, s2, fileContent);
+	std::string	outputFilename = filename + ".replace";
+	if (!writeFile(outputFilename, replaced))
 		return (1);
 	return (0);
 }
