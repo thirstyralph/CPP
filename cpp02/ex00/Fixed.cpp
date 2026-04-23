@@ -24,22 +24,10 @@ Fixed::~Fixed(){
 //Copy constructor
 Fixed::Fixed(const Fixed &oldFixed) {
 	std::cout << "Copy constructor called" << std::endl;
-	this->Value = oldFixed.getRawBits();
+	this->Value = oldFixed.Value;
 };
 
-//comparison overload
-/*
-//by referece
 Fixed& Fixed::operator=(const Fixed& oldFixed) {
-	if (this != &oldFixed) {
-		this->Value = oldFixed.getRawBits();
-	}
-	return *this;
-};
-*/
-
-//by value 
-Fixed Fixed::operator=(const Fixed oldFixed) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &oldFixed) {
 		this->Value = oldFixed.getRawBits();

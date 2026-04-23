@@ -17,7 +17,7 @@ class	Fixed {
 		//by reference
 		//Fixed& operator=(const Fixed& oldFixed);
 		//By value
-		Fixed operator=(const Fixed oldFixed);
+		Fixed& operator=(const Fixed& oldFixed);
 		//ValueGetter
 		int					getRawBits() const;
 		void				setRawBits(int Value);
