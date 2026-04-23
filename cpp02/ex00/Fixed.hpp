@@ -4,7 +4,7 @@
 class	Fixed {
 	//OCF
 	private:
-		int					Value;
+		int					rawBits;
 		static const int	FractionalBits = 8;
 	public:
 		//Default constructor

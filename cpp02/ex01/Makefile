@@ -1,11 +1,12 @@
-NAME    := Fixed 
-CC      := c++
-CFLAGS  := -Wextra -Wall -Werror -g -std=c++98
-OBJ_DIR := obj
+NAME	:= Fixed
+CC		:= c++
+CFLAGS	:= -Wextra -Wall -Werror -g -std=c++98
+LDFLAGS	:= -lm
+OBJ_DIR	:= obj
 
-INC	    := $(wildcard ./*.hpp)
-SRCS    := $(wildcard ./*.cpp)
-OBJS    := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS))
+INC		:= $(wildcard ./*.hpp)
+SRCS	:= $(wildcard ./*.cpp)
+OBJS	:= $(patsubst %.cpp,$(OBJ_DIR)/%.o,$(SRCS))
 
 all: $(NAME)
 
@@ -14,7 +15,7 @@ $(OBJ_DIR)/%.o: ./%.cpp $(INC)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
 
 clean:
 	@rm -rf $(OBJ_DIR)
