@@ -1,0 +1,10 @@
+#ignore all
+*
+#unignore all with extensions
+!*.*
+
+#ignore the dumb out files I create to ask copilot what I have done wrong
+out
+#ignore vim swap files
+*.swp
+
