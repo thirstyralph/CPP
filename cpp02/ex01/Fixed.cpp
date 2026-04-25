@@ -38,15 +38,15 @@ int	Fixed::getRawBits() const{
 
 void	Fixed::setRawBits(int rawBits) { 
 	std::cout << "setRawBits called" << std::endl;
-	this->rawBits = rawBits /*<< this->FractionalBits*/;
+	this->rawBits = rawBits;
 };
 
-int	Fixed::toInt() const{
+int	Fixed::toInt(void) const{
 	std::cout << "toInt called" << std::endl;
 	return (this->rawBits >> this->FractionalBits);
 }
 
-float	Fixed::toFloat() const{
+float	Fixed::toFloat(void) const{
 	std::cout << "toFloat called" << std::endl;
 	return ((float)this->rawBits / (1  << this->FractionalBits));
 }

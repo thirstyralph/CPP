@@ -3,8 +3,12 @@
 #unignore all with extensions
 !*.*
 
+#ignore obj directories that get generated after compilation
+*/obj
+
 #ignore the dumb out files I create to ask copilot what I have done wrong
 out
+
 #ignore vim swap files
 *.swp
 

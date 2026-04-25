@@ -2,23 +2,14 @@
 #include <string>
 
 class	Fixed {
-	//OCF
+	public:
+							Fixed();
+							~Fixed();
+							Fixed(const Fixed &oldFixed);
+							Fixed& operator=(const Fixed& oldFixed);
+		int					getRawBits() const;
+		void				setRawBits(int Value);
 	private:
 		int					rawBits;
 		static const int	FractionalBits = 8;
-	public:
-		//Default constructor
-		Fixed();
-		//Copy constructor
-		Fixed(const Fixed &oldFixed);
-		//Destructor
-		~Fixed();
-		//Copy assigment operator
-		//by reference
-		//Fixed& operator=(const Fixed& oldFixed);
-		//By value
-		Fixed& operator=(const Fixed& oldFixed);
-		//ValueGetter
-		int					getRawBits() const;
-		void				setRawBits(int Value);
 };
