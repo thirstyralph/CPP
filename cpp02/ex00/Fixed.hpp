@@ -8,7 +8,7 @@ class	Fixed {
 							Fixed(const Fixed &oldFixed);
 							Fixed& operator=(const Fixed& oldFixed);
 		int					getRawBits() const;
-		void				setRawBits(int Value);
+		void				setRawBits(int const raw);
 	private:
 		int					rawBits;
 		static const int	FractionalBits = 8;

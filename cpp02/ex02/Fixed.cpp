@@ -35,7 +35,7 @@ int	Fixed::getRawBits() const{
 	return (this->rawBits);
 };
 
-void	Fixed::setRawBits(int rawBits) { 
+void	Fixed::setRawBits(int const rawBits) { 
 	std::cout << "setRawBits called" << std::endl;
 	this->rawBits = rawBits;
 };

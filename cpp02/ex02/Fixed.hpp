@@ -19,7 +19,7 @@ class	Fixed {
 		Fixed				&operator=(const Fixed &rhs);
 		//ValueGetter
 		int					getRawBits(void) const;
-		void				setRawBits(int Value);
+		void				setRawBits(int const Value);
 		float				toFloat(void) const;
 		int					toInt(void) const;
 		//comparison operator

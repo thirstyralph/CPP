@@ -50,7 +50,17 @@ int main( void ) {
 
 	std::cout << b << std::endl;
 
+	std::cout << "max" << std::endl;
 	std::cout << Fixed::max(a, b) << std::endl;
+
+	std::cout << "min" << std::endl;
+	std::cout << Fixed::min(a, b) << std::endl;
+
+	std::cout << "antes " << a << "despues" << --a << std::endl;
+	std::cout << a / b << std::endl;
+	/*	For those who want to set the world on fire <3
+	std::cout << a / 0 << std::endl;
+	*/
 
 	return 0;
 }
