@@ -1,16 +1,18 @@
-NAME    := Claptrap
+NAME    := ClapTrap
 CC      := c++
 CFLAGS  := -Wextra -Wall -Werror -g -std=c++98
+
 OBJ_DIR := obj
 
-INC	    := $(wildcard ./*.hpp)
-SRCS    := $(wildcard ./*.cpp)
-OBJS    := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRCS))
+INC	    := ClapTrap.hpp
+
+SRCS    := ClapTrap.cpp main.cpp 
+OBJS    := $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
 all: $(NAME)
 
 $(OBJ_DIR)/%.o: ./%.cpp $(INC)
-	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)

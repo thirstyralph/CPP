@@ -5,37 +5,32 @@
 
 class ClapTrap {
 	private:
-		std::string		name;
-		unsigned int	hitPoints;
-		unsigned int	energyPoints;
-		unsigned int	attackDamage;
+		std::string				name;
+		unsigned int			hitPoints;
+		unsigned int			energyPoints;
+		unsigned int			attackDamage;
 	public:
 		//default constructor
-					ClapTrap();
+								ClapTrap(std::string name);
 		//copy constructor
-					ClapTrap(ClapTrap& old);
+								ClapTrap(ClapTrap& old);
 		//Destructor
-					~ClapTrap();
+								~ClapTrap();
 		//Copy assignment operator
-		ClapTrap	&operator=(const ClapTrap &src);
-		std::string	getName() const;
-		/*------------------- getters --------------------------------------*/
+		ClapTrap				&operator=(const ClapTrap &src);
+		std::string				getName() const;
+		/*------------- Setters ---------------------------------*/
+		void					setHitPoints(const unsigned int value);
+		void					setEnergyPoints(const unsigned int value);
+		void					setAttackDamage(const unsigned int value);
+		/*------------- Getters ---------------------------------*/
 		unsigned int			getHitPoints() const;
 		unsigned int			getEnergyPoints() const ;
 		unsigned int			getAttackDamage() const;
-		/*------------------- setters --------------------------------------*/
-		void			setHitPoints(const unsigned int hp);
-		void			setEnergyPoints(const unsigned int ep);
-		void			setAttackDamage(const unsigned int ad);
-		void			definePoints(unsigned int hp, unsigned int ep,
-							unsigned int ad);
-		void			setName(const std::string newName);
-
-		/*------------------- actions --------------------------------------*/
-		void		attack(const std::string& target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
-
-
+		/*------------- Actions ---------------------------------*/
+		void					attack(const std::string& target);
+		void					takeDamage(unsigned int amount);
+		void					beRepaired(unsigned int amount);
+		void					guardGate(void);
 };
 #endif

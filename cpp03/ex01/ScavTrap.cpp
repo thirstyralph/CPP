@@ -1,8 +1,9 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() {
-	this->setName("ScavTrap");
-	this->definePoints(100, 50, 20);
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name){
+	this->setHitPoints(100);
+	this->setEnergyPoints(50);
+	this->setAttackDamage(20);
 }
 
 void	ScavTrap::attack(const std::string &target) {
@@ -13,3 +14,8 @@ void	ScavTrap::attack(const std::string &target) {
 ScavTrap::~ScavTrap() {
 	std::cout << this->getName() << " was painfully shredded." << std::endl;
 }
+
+void	ScavTrap::guardGate(void) {
+	std::cout << this->getName() << " has been switched into gatekeeper mode!" << std::endl;
+}
+

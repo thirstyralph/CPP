@@ -1,8 +1,9 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() {
-	this->setName("Fragtrap");
-	this->definePoints(100, 100, 30);
+FragTrap::FragTrap(std::string name) : ClapTrap(name) {
+	this->setHitPoints(100);
+	this->setEnergyPoints(100);
+	this->setAttackDamage(30);
 }
 
 FragTrap::~FragTrap() {
