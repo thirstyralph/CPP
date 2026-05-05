@@ -1,16 +1,14 @@
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() {
-	this->setType("Cat");
+WrongCat::WrongCat() {
+	this->setType("WrongCat");
 	std::cout << this->getType() << " A morbidly obese cat has been born" << std::endl;
-	this->noggin = new Brain();
 }
 
-Cat::~Cat(void) {
+WrongCat::~WrongCat(void) {
 	std::cout << this->getType() << " has been collected for lard" << std::endl;
-	delete this->noggin;
 }
 
-void	Cat::makeSound() const{
+void	WrongCat::makeSound() {
 	std::cout << this->getType() << ": MEOW I HATE MONDAYS MEOW" << std::endl;
 }

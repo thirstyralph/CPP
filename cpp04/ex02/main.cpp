@@ -3,9 +3,9 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-Animal	**herd(void) {
+AAnimal	**herd(void) {
 	int		i = 0;	
-	Animal	**ret = new Animal*[100];
+	AAnimal	**ret = new AAnimal*[100];
 	
 	while (i < 50) {
 		ret[i] = new Dog();
@@ -18,7 +18,7 @@ Animal	**herd(void) {
 	return (ret);
 }
 
-void	destroyHerd(int	n, Animal **flock) {
+void	destroyHerd(int	n, AAnimal **flock) {
 	for (int i = 0; i < n; ++i) {
 		delete flock[i];
 	}
@@ -29,23 +29,23 @@ int	main(void) {
 	std::cout << "STARTING ex01" << std::endl;
 	std::cout << "SUBJECT TESTS" << std::endl;
 
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+//	const AAnimal* meta = new AAnimal();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound();
 	j->makeSound();
-	meta->makeSound();
-	delete meta;
+//	meta->makeSound();
+	//delete meta;
 	delete j;
 	delete i;
 	std::cout << "END OF SUBJECT TESTS" << std::endl;
 
-	Animal		animal;
+//	AAnimal		animal;
 	Dog			toby;
 	Cat			putogordo;
-	Animal		*animalptr;
+	AAnimal		*animalptr;
 	WrongCat	notACat;
 	WrongAnimal	*notAnAnimal = &notACat;
 
@@ -62,16 +62,16 @@ int	main(void) {
 	std::cout << "Wrong animal will speak now:" << std::endl;
 	notAnAnimal->makeSound();
 
-	std::cout << animal.getType() << std::endl;
+//	std::cout << animal.getType() << std::endl;
 	std::cout << toby.getType() << std::endl;
 	std::cout << putogordo.getType() << std::endl;
 	animalptr->makeSound();
-	animal.makeSound();
+//	animal.makeSound();
 	toby.makeSound();
 	putogordo.makeSound();
 
-	std::cout << "Testing the Animal Array" << std::endl;
-	Animal **flock = herd();
+	std::cout << "Testing the AAnimal Array" << std::endl;
+	AAnimal **flock = herd();
 	for (int h = 0; h < 100; ++h) {
 		flock[h]->makeSound();
 	}
