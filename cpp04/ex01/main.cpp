@@ -3,8 +3,30 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
+Animal	**herd(void) {
+	int		i = 0;	
+	Animal	**ret = new Animal*[100];
+	
+	while (i < 50) {
+		ret[i] = new Dog();
+		++i;
+	}
+	while (i < 100) {
+		ret[i] = new Cat();
+		++i;
+	}
+	return (ret);
+}
+
+void	destroyHerd(int	n, Animal **flock) {
+	for (int i = 0; i < n; ++i) {
+		delete flock[i];
+	}
+	delete[] flock;
+}
+
 int	main(void) {
-	std::cout << "STARTING ex00" << std::endl;
+	std::cout << "STARTING ex01" << std::endl;
 	std::cout << "SUBJECT TESTS" << std::endl;
 
 	const Animal* meta = new Animal();
@@ -15,6 +37,9 @@ int	main(void) {
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+	delete meta;
+	delete j;
+	delete i;
 	std::cout << "END OF SUBJECT TESTS" << std::endl;
 
 	Animal		animal;
@@ -44,6 +69,13 @@ int	main(void) {
 	animal.makeSound();
 	toby.makeSound();
 	putogordo.makeSound();
-	std::cout << "END OF ex00" << std::endl;
+
+	std::cout << "Testing the Animal Array" << std::endl;
+	Animal **flock = herd();
+	for (int h = 0; h < 100; ++h) {
+		flock[h]->makeSound();
+	}
+	destroyHerd(100, flock);
+	std::cout << "END OF ex01" << std::endl;
 	return (0);
 }

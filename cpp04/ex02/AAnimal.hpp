@@ -4,18 +4,18 @@
 #include <string>
 #include <iostream>
 
-class	Animal {
+class	AAnimal {
 	protected:
 		std::string	type;
 	public:
-					Animal();
-					Animal(const std::string&	type);
-					~Animal();
-		Animal		&operator=(const Animal& old) ;
+					AAnimal();
+					AAnimal(const std::string&	type);
+					virtual ~AAnimal();
+		AAnimal		&operator=(const AAnimal& old) ;
 		/*---- setters ----*/
 		void		setType(const std::string&	type);
 		/*---- getters ----*/
 		std::string	getType() const;
-		virtual void		makeSound(void) const;
+		virtual void		makeSound(void) const = 0;
 };
 #endif

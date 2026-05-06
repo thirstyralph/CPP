@@ -29,5 +29,5 @@ Animal&	Animal::operator=(const Animal& old) {
 }
 
 void	Animal::makeSound(void) const{
-	std::cout << "..." << std::endl;
+	std::cout << "there is a house in New Orleans ... They call the Rising Sun" << std::endl;
 }
