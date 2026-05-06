@@ -6,6 +6,17 @@ Cat::Cat() {
 	this->noggin = new Brain();
 }
 
+Cat::Cat(const Cat& old) 
+	: AAnimal (old)  {
+	this->type = old.getType();
+}
+
+Cat&	Cat::operator=(const Cat& old) {
+	if (this != &old)
+		this->setType(old.getType());
+	return (*this);
+}
+
 Cat::~Cat(void) {
 	std::cout << this->getType() << " has been collected for lard" << std::endl;
 	delete this->noggin;

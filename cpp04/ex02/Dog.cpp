@@ -7,6 +7,17 @@ Dog::Dog() {
 	this->noggin = new Brain();
 }
 
+Dog::Dog(const Dog& old) 
+	: AAnimal(old) {
+	this->type = old.getType();
+}
+
+Dog&	Dog::operator=(const Dog& old) {
+	if (this != &old)
+		this->setType(old.getType());
+	return (*this);
+}
+
 Dog::~Dog(void) {
 	std::cout << this->getType() << " has been eliminated" << std::endl;
 	delete this->noggin;

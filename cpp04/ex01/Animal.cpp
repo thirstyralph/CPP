@@ -4,6 +4,10 @@ Animal::Animal() {
 	this->type = "worm";
 }
 
+Animal::Animal(const Animal& type) {
+	this->type = type.getType();
+}
+
 Animal::Animal(const std::string& type) {
 	this->type = type;
 }
@@ -29,5 +33,5 @@ Animal&	Animal::operator=(const Animal& old) {
 }
 
 void	Animal::makeSound(void) const{
-	std::cout << "there is a house in New Orleans ... They call the Rising Sun" << std::endl;
+	std::cout << "..." << std::endl;
 }

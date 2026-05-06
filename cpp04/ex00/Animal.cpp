@@ -4,6 +4,10 @@ Animal::Animal() {
 	this->type = "worm";
 }
 
+Animal::Animal(const Animal& type) {
+	this->type = type.getType();
+}
+
 Animal::Animal(const std::string& type) {
 	this->type = type;
 }

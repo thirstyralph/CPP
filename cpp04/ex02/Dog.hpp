@@ -10,8 +10,10 @@ class Dog : public AAnimal {
 	private:
 		Brain	*noggin;
 	public:
-				Dog();
-				~Dog();
+			Dog();
+			Dog(const Dog& old);
+			~Dog();
+	Dog&	operator=(const Dog& old);
 	void	makeSound() const;
 };
 

@@ -9,8 +9,9 @@ class	Animal {
 		std::string	type;
 	public:
 					Animal();
+					Animal(const Animal&	old);
 					Animal(const std::string&	type);
-					virtual ~Animal();
+		virtual			~Animal();
 		Animal		&operator=(const Animal& old) ;
 		/*---- setters ----*/
 		void		setType(const std::string&	type);

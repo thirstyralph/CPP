@@ -6,10 +6,11 @@
 #include <string>
 
 class Dog : public Animal {
-	private:
 	public:
-				Dog();
-				~Dog();
+			Dog();
+			Dog(const Dog& old);
+			~Dog();
+	Dog&	operator=(const Dog& old);
 	void	makeSound() const;
 };
 

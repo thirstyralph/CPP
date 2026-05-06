@@ -6,10 +6,11 @@
 #include <string>
 
 class Cat : public Animal {
-	private:
 	public:
 				Cat();
+				Cat(const Cat& old);
 				~Cat();
+	Cat&			operator=(const Cat& old);
 	void	makeSound() const;
 };
 

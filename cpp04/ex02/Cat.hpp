@@ -10,8 +10,10 @@ class Cat : public AAnimal {
 	private:
 		Brain	*noggin;
 	public:
-				Cat();
-				~Cat();
+			Cat();
+			Cat(const Cat& old);
+			~Cat();
+	Cat&	operator=(const Cat& old);
 	void	makeSound() const;
 };
 

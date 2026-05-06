@@ -5,6 +5,17 @@ Cat::Cat() {
 	std::cout << this->getType() << " A morbidly obese cat has been born" << std::endl;
 }
 
+Cat::Cat(const Cat& old) 
+	: Animal (old)  {
+	this->type = old.getType();
+}
+
+Cat&	Cat::operator=(const Cat& old) {
+	if (this != &old)
+		this->setType(old.getType());
+	return (*this);
+}
+
 Cat::~Cat(void) {
 	std::cout << this->getType() << " has been collected for lard" << std::endl;
 }
