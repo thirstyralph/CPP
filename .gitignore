@@ -4,12 +4,13 @@
 !*/
 
 #unignore all with extensions
-!*.*
+!**/*.*
+
 #unignore Makefiles
-!*/Makefile
+!**/Makefile
 
 #ignore obj directories that get generated after compilation
-*/obj
+**/obj
 
 #ignore vim swap files
 *.swp
