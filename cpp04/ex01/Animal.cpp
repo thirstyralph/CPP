@@ -1,6 +1,7 @@
 #include "Animal.hpp"
 
 Animal::Animal() {
+	std::cout << "Animal default constructor" << std::endl;
 	this->type = "worm";
 }
 
@@ -13,7 +14,7 @@ Animal::Animal(const std::string& type) {
 }
 
 Animal::~Animal() {
-	std::cout << "Animal has been exterminated" << std::endl;
+	std::cout << "Animal Destructor" << std::endl;
 }
 
 /* ---- Setters ----- */

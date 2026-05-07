@@ -27,9 +27,3 @@ AAnimal&	AAnimal::operator=(const AAnimal& old) {
 		this->setType(old.getType());
 	return (*this);
 }
-
-/*
-void	AAnimal::makeSound(void) const{
-	std::cout << "there is a house in New Orleans ... They call the Rising Sun" << std::endl;
-}
-*/

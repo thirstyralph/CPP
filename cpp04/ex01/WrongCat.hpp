@@ -2,15 +2,19 @@
 # define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
+#include "Brain.hpp"
 #include <iostream>
 #include <string>
 
 class WrongCat : public WrongAnimal {
 	private:
+	Brain		*brain;	
 	public:
 				WrongCat();
+				WrongCat(const WrongCat& old);
 				~WrongCat();
-	void	makeSound();
+	WrongCat&	operator=(const WrongCat& old);
+	void		makeSound();
 };
 
 #endif

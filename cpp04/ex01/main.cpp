@@ -25,8 +25,35 @@ void	destroyHerd(int	n, Animal **flock) {
 	delete[] flock;
 }
 
-int	main(void) {
-	std::cout << "STARTING ex01" << std::endl;
+void	testAnimalArray() {
+	std::cout << "Testing the Animal Array" << std::endl;
+	Animal **flock = herd();
+	for (int h = 0; h < 100; ++h) {
+		flock[h]->makeSound();
+	}
+	destroyHerd(100, flock);
+	std::cout << "END OF TESTING ANIMAL ARRAY" << std::endl;
+	std::cout << "TESTING DEEP COPYS" << std::endl;
+	Dog	*paco = new Dog;
+	Dog *pepe = new Dog(*paco);
+	delete	paco;
+	pepe->makeSound();
+	delete pepe;
+
+	std::cout << "END OF TESTING DEEP COPYS" << std::endl;
+}
+
+void	testWrongAnimal() {
+	WrongCat	notACat;
+	WrongAnimal	*notAnAnimal = &notACat;
+
+	std::cout << "Wrong cat will speak now:" << std::endl;
+	notACat.makeSound();
+	std::cout << "Wrong animal will speak now:" << std::endl;
+	notAnAnimal->makeSound();
+}
+
+void	subjectTests() {
 	std::cout << "SUBJECT TESTS" << std::endl;
 
 	const Animal* meta = new Animal();
@@ -40,18 +67,23 @@ int	main(void) {
 	delete meta;
 	delete j;
 	delete i;
+	Dog basic;
+	{
+		Dog tmp = basic;
+	}
 	std::cout << "END OF SUBJECT TESTS" << std::endl;
+}
+
+int	main(void) {
+	std::cout << "STARTING ex01" << std::endl;
 
 	 Animal		animal;
 	Dog			toby;
 	Dog			bobby(toby);
-	Cat			putogordo;
+	Cat			gatogordo;
 	Animal		*animalptr;
-	WrongCat	notACat;
-	WrongAnimal	*notAnAnimal = &notACat;
 
-
-	animalptr = new Cat(putogordo);
+	animalptr = new Cat(gatogordo);
 	std::cout << animalptr->getType() << std::endl;
 	animalptr->makeSound();
 	delete animalptr;
@@ -59,33 +91,17 @@ int	main(void) {
 	std::cout << animalptr->getType() << std::endl;
 	animalptr->makeSound();
 
-	std::cout << "Wrong cat will speak now:" << std::endl;
-	notACat.makeSound();
-	std::cout << "Wrong animal will speak now:" << std::endl;
-	notAnAnimal->makeSound();
-
 	std::cout << animal.getType() << std::endl;
 	std::cout << toby.getType() << std::endl;
-	std::cout << putogordo.getType() << std::endl;
+	std::cout << gatogordo.getType() << std::endl;
 	animalptr->makeSound();
 	animal.makeSound();
 	toby.makeSound();
-	putogordo.makeSound();
+	gatogordo.makeSound();
 
-	std::cout << "Testing the Animal Array" << std::endl;
-	Animal **flock = herd();
-	for (int h = 0; h < 100; ++h) {
-		flock[h]->makeSound();
-	}
-	destroyHerd(100, flock);
-	std::cout << "END OF ex01" << std::endl;
-	std::cout << "TESTING DEEP COPYS" << std::endl;
-	Dog	*paco = new Dog;
-	Dog *pepe = new Dog(*paco);
-	delete	paco;
-	pepe->makeSound();
-	delete pepe;
+	subjectTests();
+	testWrongAnimal();
+	testAnimalArray();
 	delete animalptr;
-	std::cout << "END OF TESTING DEEP COPYS" << std::endl;
 	return (0);
 }

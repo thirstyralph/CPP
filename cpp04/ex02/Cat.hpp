@@ -8,13 +8,13 @@
 
 class Cat : public AAnimal {
 	private:
-		Brain	*noggin;
+		Brain	*brain;
 	public:
-			Cat();
-			Cat(const Cat& old);
-			~Cat();
-	Cat&	operator=(const Cat& old);
-	void	makeSound() const;
+				Cat();
+				Cat(const Cat& old);
+				~Cat();
+	Cat&		operator=(const Cat& old);
+	void		makeSound() const;
 };
 
 #endif

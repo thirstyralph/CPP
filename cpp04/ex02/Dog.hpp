@@ -8,13 +8,14 @@
 
 class Dog : public AAnimal {
 	private:
-		Brain	*noggin;
+		Brain		*brain;
 	public:
-			Dog();
-			Dog(const Dog& old);
-			~Dog();
-	Dog&	operator=(const Dog& old);
-	void	makeSound() const;
+					Dog();
+					Dog(const Dog& old);
+					~Dog();
+	Dog&			operator=(const Dog& old);
+	void			makeSound() const;
+	//const Brain&	getBrain() const;
 };
 
 #endif

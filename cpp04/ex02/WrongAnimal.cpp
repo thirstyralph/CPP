@@ -1,6 +1,7 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() {
+	std::cout << "WrongAnimal constructor" << std::endl;
 	this->type = "worm";
 }
 
@@ -9,7 +10,7 @@ WrongAnimal::WrongAnimal(const std::string& type) {
 }
 
 WrongAnimal::~WrongAnimal() {
-	std::cout << "WrongAnimal has been exterminated" << std::endl;
+	std::cout << "WrongAnimal Destructor" << std::endl;
 }
 
 /* ---- Setters ----- */
