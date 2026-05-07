@@ -42,18 +42,20 @@ int	main(void) {
 	delete i;
 	std::cout << "END OF SUBJECT TESTS" << std::endl;
 
-	Animal		animal;
+	 Animal		animal;
 	Dog			toby;
+	Dog			bobby(toby);
 	Cat			putogordo;
 	Animal		*animalptr;
 	WrongCat	notACat;
 	WrongAnimal	*notAnAnimal = &notACat;
 
 
-	animalptr = &putogordo;
+	animalptr = new Cat(putogordo);
 	std::cout << animalptr->getType() << std::endl;
 	animalptr->makeSound();
-	animalptr = &toby;
+	delete animalptr;
+	animalptr = new Dog(toby);
 	std::cout << animalptr->getType() << std::endl;
 	animalptr->makeSound();
 
@@ -77,5 +79,13 @@ int	main(void) {
 	}
 	destroyHerd(100, flock);
 	std::cout << "END OF ex01" << std::endl;
+	std::cout << "TESTING DEEP COPYS" << std::endl;
+	Dog	*paco = new Dog;
+	Dog *pepe = new Dog(*paco);
+	delete	paco;
+	pepe->makeSound();
+	delete pepe;
+	delete animalptr;
+	std::cout << "END OF TESTING DEEP COPYS" << std::endl;
 	return (0);
 }
