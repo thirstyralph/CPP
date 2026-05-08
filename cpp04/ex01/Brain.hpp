@@ -11,5 +11,6 @@ class	Brain {
 						~Brain();
 	Brain&				operator=(const Brain& old);
 	const std::string&	getThought(const unsigned int i);
+	void				setThought(const unsigned int i, const std::string &thought);
 };
 #endif

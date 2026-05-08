@@ -19,13 +19,13 @@ int	main(void) {
 
 	Animal		animal;
 	Dog			toby;
-	Cat			putogordo;
+	Cat			fatcat;
 	Animal		*animalptr;
 	WrongCat	notACat;
 	WrongAnimal	*notAnAnimal = &notACat;
 
 
-	animalptr = &putogordo;
+	animalptr = &fatcat;
 	std::cout << animalptr->getType() << std::endl;
 	animalptr->makeSound();
 	animalptr = &toby;
@@ -39,11 +39,11 @@ int	main(void) {
 
 	std::cout << animal.getType() << std::endl;
 	std::cout << toby.getType() << std::endl;
-	std::cout << putogordo.getType() << std::endl;
+	std::cout << fatcat.getType() << std::endl;
 	animalptr->makeSound();
 	animal.makeSound();
 	toby.makeSound();
-	putogordo.makeSound();
+	fatcat.makeSound();
 	std::cout << "END OF ex00" << std::endl;
 	return (0);
 }

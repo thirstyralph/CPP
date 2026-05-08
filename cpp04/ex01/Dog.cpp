@@ -4,6 +4,10 @@ Dog::Dog() : brain() {
 	this->setType("Dog");
 	std::cout << this->getType() << ": Default constructor " << std::endl;
 	this->brain = new Brain;
+	for(int i = 0; i < 100; i++)
+	{
+		this->brain->setThought(i, "warf");
+	}
 }
 
 Dog::Dog(const Dog& old) 

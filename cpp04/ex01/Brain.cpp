@@ -25,3 +25,7 @@ Brain::~Brain() {
 const std::string&	Brain::getThought(const unsigned int i) {
 	return (this->ideas[i]);
 }
+
+void	Brain::setThought(const unsigned int i, const std::string &thought) {
+	this->ideas[i] = thought;
+}

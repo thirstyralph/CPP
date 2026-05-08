@@ -1,19 +1,22 @@
 #include "Animal.hpp"
 
 Animal::Animal() {
-	this->type = "worm";
+	std::cout << "Animal default constructor" << std::endl;
+	this->type = "";
 }
 
 Animal::Animal(const Animal& type) {
+	std::cout << "Animal copy constructor" << std::endl;
 	this->type = type.getType();
 }
 
 Animal::Animal(const std::string& type) {
+	std::cout << "Animal string type constructor" << std::endl;
 	this->type = type;
 }
 
 Animal::~Animal() {
-	std::cout << "Animal has been exterminated" << std::endl;
+	std::cout << "Animal default destructor" << std::endl;
 }
 
 /* ---- Setters ----- */
@@ -33,5 +36,5 @@ Animal&	Animal::operator=(const Animal& old) {
 }
 
 void	Animal::makeSound(void) const{
-	std::cout << "..." << std::endl;
+	std::cout << "there is a House in New Orleans, they Call the Rising Sun" << std::endl;
 }

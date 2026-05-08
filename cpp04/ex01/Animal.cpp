@@ -2,7 +2,7 @@
 
 Animal::Animal() {
 	std::cout << "Animal default constructor" << std::endl;
-	this->type = "worm";
+	this->type = "";
 }
 
 Animal::Animal(const Animal& type) {
@@ -34,5 +34,5 @@ Animal&	Animal::operator=(const Animal& old) {
 }
 
 void	Animal::makeSound(void) const{
-	std::cout << "..." << std::endl;
+	std::cout << "There is a house in New Orleans, they call the Rising Sun" << std::endl;
 }

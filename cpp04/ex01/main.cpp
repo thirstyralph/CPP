@@ -80,10 +80,10 @@ int	main(void) {
 	 Animal		animal;
 	Dog			toby;
 	Dog			bobby(toby);
-	Cat			gatogordo;
+	Cat			fatcat;
 	Animal		*animalptr;
 
-	animalptr = new Cat(gatogordo);
+	animalptr = new Cat(fatcat);
 	std::cout << animalptr->getType() << std::endl;
 	animalptr->makeSound();
 	delete animalptr;
@@ -93,11 +93,11 @@ int	main(void) {
 
 	std::cout << animal.getType() << std::endl;
 	std::cout << toby.getType() << std::endl;
-	std::cout << gatogordo.getType() << std::endl;
+	std::cout << fatcat.getType() << std::endl;
 	animalptr->makeSound();
 	animal.makeSound();
 	toby.makeSound();
-	gatogordo.makeSound();
+	fatcat.makeSound();
 
 	subjectTests();
 	testWrongAnimal();

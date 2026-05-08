@@ -44,13 +44,13 @@ int	main(void) {
 
 //	AAnimal		animal;
 	Dog			toby;
-	Cat			putogordo;
+	Cat			fatcat;
 	AAnimal		*animalptr;
 	WrongCat	notACat;
 	WrongAnimal	*notAnAnimal = &notACat;
 
 
-	animalptr = &putogordo;
+	animalptr = &fatcat;
 	std::cout << animalptr->getType() << std::endl;
 	animalptr->makeSound();
 	animalptr = &toby;
@@ -64,11 +64,11 @@ int	main(void) {
 
 //	std::cout << animal.getType() << std::endl;
 	std::cout << toby.getType() << std::endl;
-	std::cout << putogordo.getType() << std::endl;
+	std::cout << fatcat.getType() << std::endl;
 	animalptr->makeSound();
 //	animal.makeSound();
 	toby.makeSound();
-	putogordo.makeSound();
+	fatcat.makeSound();
 
 	std::cout << "Testing the AAnimal Array" << std::endl;
 	AAnimal **flock = herd();

@@ -1,9 +1,13 @@
 #include "Cat.hpp"
 
-Cat::Cat() {
+Cat::Cat() : brain() {
 	this->setType("Cat");
-	std::cout << this->getType() << ": Default constructor" << std::endl;
+	std::cout << this->getType() << ": Default constructor " << std::endl;
 	this->brain = new Brain;
+	for(int i = 0; i < 100; i++)
+	{
+		this->brain->setThought(i, "I MUST EXTERMINATE");
+	}
 }
 
 Cat::Cat(const Cat& old) 
