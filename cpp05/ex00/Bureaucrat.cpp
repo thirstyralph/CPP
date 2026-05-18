@@ -1,20 +1,32 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(unsigned int grade) {
+char const*	Bureaucrat::GradeTooHighException::what() const throw() {
+	return "Bureaucrat grade too high";
+}
+
+char const*	Bureaucrat::GradeTooLowException::what() const throw() {
+	return "Bureaucrat grade too low";
+}
+
+Bureaucrat::Bureaucrat(const std::string &name) : name(name), grade(150) {
+	std::cout << "bureaucrat string constructor with name " << name <<std::endl;
+}
+
+Bureaucrat::Bureaucrat(unsigned int grade) : name("Hermes Conrad"), grade(150) {
 	unsigned int	max = 150;
 	unsigned int	min = 1;
-	std::cout << "Bureaucrat unsigned int constructor with value " << grade <<std::endl;
+	std::cout << "bureaucrat unsigned int constructor with value " << grade <<std::endl;
 	if (grade > max)
-		throw std::out_of_range("There is no grade bellow 150");
+		throw Bureaucrat::GradeTooLowException();
 	else if (grade < min)
-		throw std::out_of_range("there is no grade above 1");
+		throw Bureaucrat::GradeTooHighException();
 	else
 		this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src) {
-	if (this != &src)
-		this->grade = src.grade;
+Bureaucrat::Bureaucrat(const Bureaucrat &src)
+	: name(src.name), grade(src.grade) 
+{
 	std::cout << "Bureaucrat copy constructor" << std::endl;
 }
 
@@ -29,6 +41,10 @@ Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &src) {
 	return (*this);
 }
 
-unsigned int Bureaucrat::getGrade(void) {
+unsigned int Bureaucrat::getGrade(void) const{
 	return (this->grade);
+}
+
+std::string Bureaucrat::getName(void) const{
+	return (this->name);
 }

@@ -5,14 +5,24 @@
 
 class Bureaucrat {
 	public:
+						Bureaucrat(const std::string &name);
 						Bureaucrat(const unsigned int grade);
 						Bureaucrat(const Bureaucrat &src);
 		Bureaucrat&		operator=(const Bureaucrat &src);
 						~Bureaucrat();
-		unsigned int	getGrade(void);
+		unsigned int	getGrade(void) const;
+		std::string		getName(void) const;
+		class			GradeTooHighException : public std::exception {
+			public:
+				char const* what() const throw();
+		};
+		class			GradeTooLowException : public std::exception {
+			public:
+				char const* what() const throw();
+		};
 	private:
-		static const	std::string name;
-		unsigned int	grade;
+		std::string const	name;
+		unsigned int		grade;
 };
 
 std::ostream	&operator<<(std::ostream &out, const Bureaucrat &src);
