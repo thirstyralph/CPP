@@ -14,10 +14,17 @@ int	bureaucratBasicTest(void) {
 		}
 		}
 	}
-	return (0);
+	return (1);
 }
 
 int	main(void) {
-	(void)bureaucratBasicTest();
+	int passedTests = 0;
+	//int constructors
+	passedTests += bureaucratBasicTest();
+	//getName
+	//getGrade
+	//IncrementGrade
+	//DecrementGrade
+	//insertion overload
 	return (0);
 }

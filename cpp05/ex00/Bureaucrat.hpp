@@ -12,6 +12,8 @@ class Bureaucrat {
 						~Bureaucrat();
 		unsigned int	getGrade(void) const;
 		std::string		getName(void) const;
+		void			ingrementGrade(const unsigned int amount);
+		void			decrementGrade(const unsigned int amount);
 		class			GradeTooHighException : public std::exception {
 			public:
 				char const* what() const throw();
