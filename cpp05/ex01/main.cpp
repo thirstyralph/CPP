@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	bureaucratBasicTest(void) {
 
@@ -17,7 +18,7 @@ int	bureaucratBasicTest(void) {
 	return (1);
 }
 
-int	getNameTest(void) {
+int	bureaucratGetNameTest(void) {
 	std::string	name = "";
 	Bureaucrat	*a;
 
@@ -77,7 +78,7 @@ int	main(void) {
 	//int constructors
 	passedTests += bureaucratBasicTest();
 	//getName
-	passedTests += getNameTest();
+	passedTests += bureaucratGetNameTest();
 	//IncrementGrade
 	passedTests += IncrementGradeTest();
 	//DecrementGrade
