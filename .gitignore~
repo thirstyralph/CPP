@@ -1,0 +1,17 @@
+#ignore all
+*
+#unignore all directories
+!*/
+
+#unignore all with extensions
+!**/*.*
+
+#unignore Makefiles
+!/**/Makefile
+
+#ignore obj directories that get generated after compilation
+**/obj
+
+#ignore vim swap files
+*.swp
+

@@ -1,17 +1,17 @@
-#ignore all
+# Ignore everything
 *
-#unignore all directories
+
+# Unignore all directories (so you can traverse them)
 !*/
 
-#unignore all with extensions
+# Unignore all files with extensions
 !**/*.*
 
-#unignore Makefiles
+# Unignore Makefiles anywhere
 !**/Makefile
 
-#ignore obj directories that get generated after compilation
-**/obj
+# Ignore all obj directories and their contents
+**/obj/
 
-#ignore vim swap files
-*.swp
-
+# Ignore all Vim swap files, anywhere
+**/*.swp
