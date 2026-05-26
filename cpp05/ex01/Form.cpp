@@ -10,12 +10,18 @@ char const*	Form::GradeTooLowException::what() const throw() {
 }
 
 /* Constructors */
-Form::Form(const std::string &name) : name(name), gradeToSign(150), gradeToExecute(1) {
+Form::Form(const std::string &name) :
+	name(name),
+	isSigned(false),
+	gradeToSign(150),
+	gradeToExecute(1) 
+{
 	std::cout << "form string constructor with name " << name <<std::endl;
 }
 
 Form::Form(const unsigned int gradeToSign, const unsigned int gradeToExecute) :
 		name("Unnamed Form"),
+		isSigned(false),
 		gradeToSign(gradeToSign),
 		gradeToExecute(gradeToExecute) 
 {
@@ -30,6 +36,7 @@ Form::Form(const unsigned int gradeToSign, const unsigned int gradeToExecute) :
 
 Form::Form(const std::string &name, unsigned int gradeToSign, unsigned int gradeToExecute) :
 		name(name),
+		isSigned(false),
 		gradeToSign(gradeToSign),
 		gradeToExecute(gradeToExecute)
 {
@@ -42,8 +49,9 @@ Form::Form(const std::string &name, unsigned int gradeToSign, unsigned int grade
 		throw Form::GradeTooHighException();
 }
 
-Form::Form(const Form &src)
-	: name(src.name),
+Form::Form(const Form &src) :
+	name(src.name),
+	isSigned(false),
 	gradeToSign(src.gradeToSign),
 	gradeToExecute(src.gradeToExecute)
 {
@@ -66,6 +74,14 @@ std::string Form::getName(void) const{
 /* destructor */
 Form::~Form(void) {
 	std::cout << "Form default destructor" << std::endl;
+}
+
+/* beSigned */
+void	Form::beSigned(const Bureaucrat &signer) {
+	if (Bureaucrat.getGrade() < gradeToSign)
+		isSigned = true;
+	else
+		throw Form::GradeTooLowException();
 }
 
 /* Operator overloads */

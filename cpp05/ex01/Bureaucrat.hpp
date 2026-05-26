@@ -13,6 +13,7 @@ class Bureaucrat {
 						~Bureaucrat();
 		unsigned int	getGrade(void) const;
 		std::string		getName(void) const;
+		void			signForm(Form &form);
 		void			incrementGrade(const unsigned int amount);
 		void			decrementGrade(const unsigned int amount);
 		class			GradeTooHighException : public std::exception {

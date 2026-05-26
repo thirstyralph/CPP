@@ -74,6 +74,18 @@ Bureaucrat::~Bureaucrat(void) {
 	std::cout << "Bureaucrat default destructor" << std::endl;
 }
 
+/* signForm */
+void	Bureaucrat::signForm(Form &form) {
+	try {
+		form.beSigned(this);
+	}
+	catch (std::exception const& e) {
+		std::cout << name << " couldn't sign" << form.getName();
+		std::cout << " because " << e.what() << std::endl;
+	}
+	std::cout << name << " signed " << form.getName();
+}
+
 /* Operator overloads */
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &src) {
 	if (this != &src) {

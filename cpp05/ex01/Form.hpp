@@ -11,6 +11,7 @@ class Form {
 						Form(const Form &src);
 //		Form&		operator=(const Form &src);
 						~Form();
+		void			beSigned(const Bureaucrat &signer);
 		unsigned int	getGradeToSign(void) const;
 		unsigned int	getGradeToExecute(void) const;
 		std::string		getName(void) const;
@@ -24,6 +25,7 @@ class Form {
 		};
 	private:
 		std::string const		name;
+		bool					isSigned;
 		const unsigned int		gradeToSign;
 		const unsigned int		gradeToExecute;
 };
