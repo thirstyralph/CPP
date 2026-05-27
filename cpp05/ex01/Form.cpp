@@ -2,38 +2,14 @@
 
 /* Definition of exceptions */
 char const*	Form::GradeTooHighException::what() const throw() {
-	return "Form grade too high";
+	return "grade too high";
 }
 
 char const*	Form::GradeTooLowException::what() const throw() {
-	return "Form grade too low";
+	return "grade too low";
 }
 
 /* Constructors */
-Form::Form(const std::string &name) :
-	name(name),
-	isSigned(false),
-	gradeToSign(150),
-	gradeToExecute(1) 
-{
-	std::cout << "form string constructor with name " << name <<std::endl;
-}
-
-Form::Form(const unsigned int gradeToSign, const unsigned int gradeToExecute) :
-		name("Unnamed Form"),
-		isSigned(false),
-		gradeToSign(gradeToSign),
-		gradeToExecute(gradeToExecute) 
-{
-	unsigned int	max = 150;
-	unsigned int	min = 1;
-	std::cout << "form unsigned int constructor with values " << gradeToSign << " " << gradeToExecute << std::endl;
-	if ((gradeToSign > max) || (gradeToExecute > max))
-		throw Form::GradeTooLowException();
-	else if ((gradeToSign < min) || (gradeToExecute < min))
-		throw Form::GradeTooHighException();
-}
-
 Form::Form(const std::string &name, unsigned int gradeToSign, unsigned int gradeToExecute) :
 		name(name),
 		isSigned(false),
@@ -42,7 +18,7 @@ Form::Form(const std::string &name, unsigned int gradeToSign, unsigned int grade
 {
 	unsigned int	max = 150;
 	unsigned int	min = 1;
-	std::cout << "form unsigned int constructor with values " << gradeToSign << "" <<  gradeToExecute << std::endl;
+	std::cout << "form unsigned int constructor with values " << gradeToSign << " " <<  gradeToExecute << std::endl;
 	if ((gradeToSign > max) || (gradeToExecute > max))
 		throw Form::GradeTooLowException();
 	else if ((gradeToSign < min) || (gradeToExecute < min))
@@ -71,6 +47,10 @@ std::string Form::getName(void) const{
 	return (this->name);
 }
 
+bool Form::getIsSigned(void) {
+	return (isSigned);
+}
+
 /* destructor */
 Form::~Form(void) {
 	std::cout << "Form default destructor" << std::endl;
@@ -78,23 +58,13 @@ Form::~Form(void) {
 
 /* beSigned */
 void	Form::beSigned(const Bureaucrat &signer) {
-	if (Bureaucrat.getGrade() < gradeToSign)
+	if (signer.getGrade() < gradeToSign)
 		isSigned = true;
 	else
 		throw Form::GradeTooLowException();
 }
 
 /* Operator overloads */
-/*		Disabled because const values
-Form&	Form::operator=(const Form &src) : gradeToSign(src.gradeToSign) :k  {
-	if (this != &src) {
-		this->gradeToSign = src.gradeToSign;
-		this->gradeToExecute = src.gradeToExecute;
-	}
-	return (*this);
-}
-*/
-
 std::ostream &operator<<(std::ostream &out, const Form &src) {
 	out << src.getName() << ", form with execution level " << src.getGradeToExecute();
 	out << " and signing level " << src.getGradeToSign()  << std::endl;

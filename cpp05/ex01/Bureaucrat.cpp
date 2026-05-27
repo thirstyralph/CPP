@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat(const std::string &name) : name(name), grade(150) {
 	std::cout << "bureaucrat string constructor with name " << name <<std::endl;
 }
 
-Bureaucrat::Bureaucrat(unsigned int grade) : name("Hermes Conrad"), grade(150) {
+Bureaucrat::Bureaucrat(const unsigned int grade) : name("Hermes Conrad"), grade(150) {
 	unsigned int	max = 150;
 	unsigned int	min = 1;
 	std::cout << "bureaucrat unsigned int constructor with value " << grade <<std::endl;
@@ -76,14 +76,20 @@ Bureaucrat::~Bureaucrat(void) {
 
 /* signForm */
 void	Bureaucrat::signForm(Form &form) {
+	if (form.getIsSigned()) {
+		std::cout << name << " couldn't sign " << form.getName();
+		std::cout << " because it was signed already" << std::endl;
+		return ; 
+	}
 	try {
-		form.beSigned(this);
+		form.beSigned(*this);
 	}
 	catch (std::exception const& e) {
-		std::cout << name << " couldn't sign" << form.getName();
+		std::cout << name << " couldn't sign " << form.getName();
 		std::cout << " because " << e.what() << std::endl;
+		return ; 
 	}
-	std::cout << name << " signed " << form.getName();
+	std::cout << name << " signed " << form.getName() << std::endl;
 }
 
 /* Operator overloads */

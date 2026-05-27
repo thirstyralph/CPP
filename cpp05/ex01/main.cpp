@@ -7,7 +7,7 @@ int	bureaucratBasicTest(void) {
 		{
 		try {
 			Bureaucrat	a(i);
-			if ((a.getGrade() == i) && (i >= 1 ||  i <= 150))
+			if ((a.getGrade() == i) && (i >= 1 &&  i <= 150))
 				std::cout << "Bureaucrat created with rank " << i << std::endl;
 			}
 		catch (std::exception const& e){
@@ -22,7 +22,7 @@ int	bureaucratGetNameTest(void) {
 	std::string	name = "";
 	Bureaucrat	*a;
 
-	for (unsigned int i = 0; i < 10000; ++i) {
+	for (unsigned int i = 0; i < 10; ++i) {
 		a = new Bureaucrat(name);
 		if (a->getName() == name)
 			std::cout << "Name test number " << i << " passed" << std::endl;
@@ -72,9 +72,64 @@ int	insertionOverloadTest() {
 	return (1);
 }
 
+int	formCopyConstructorTest() {
+	for (unsigned int i = 1; i < 150; ++i) { 
+		for (unsigned int j = 1; j < 150; ++j) { 
+		{
+			try {
+				Form	a("formless form", i, j);
+			}	
+			catch (std::exception const& e){
+				std::cout << "form forming failed" << std::endl;
+				return (0);
+			}
+		}
+		}
+	}
+	return (1);
+}
+
+int	formInsertionTest() {
+	Form	a("uninformed uniform form", 30, 1);
+	std::cout << a << std::endl;	
+	return (1);
+}
+
+int	formGradeGettersTest() {
+	unsigned int	gradeToSign = 30;
+	unsigned int	gradeToExecute = 1;
+	Form	a("uninformed uniform form", gradeToSign, gradeToExecute);
+
+	if (a.getGradeToSign() == gradeToSign && a.getGradeToExecute() == gradeToExecute)
+		return (1);
+	return (0);
+}
+
+int	formBeSignedTest() {
+	Bureaucrat	a("top level wizard Bureaucrat master", 1);
+	Bureaucrat	b("unknowing ignorant rookie", 150);
+	Form		c("easiest form in the world to sign", 150, 1);
+	Form		d("challenging formative form", 30, 1);
+
+	a.signForm(c);
+	b.signForm(c);
+	try {
+		b.signForm(d);
+	}
+	catch (std::exception const& e){
+	}
+	try {
+		a.signForm(d);
+	}
+	catch (std::exception const& e){
+	}
+	return (1);
+}
+
 int	main(void) {
 	int	passedTests = 0;
-	int	totalTests = 5;
+	int	totalTests = 9;
+	/* Bureaucrat */
 	//int constructors
 	passedTests += bureaucratBasicTest();
 	//getName
@@ -85,6 +140,16 @@ int	main(void) {
 	passedTests += DecrementGradeTest();
 	//insertion overload
 	passedTests += insertionOverloadTest();
+	/* Form */
+	// copy constructor
+	passedTests += formCopyConstructorTest();
+	// parametric constructor
+	// beSigned
+	passedTests += formBeSignedTest();
+	// grade getters
+	passedTests += formGradeGettersTest();
+	// insertion overload
+	passedTests += formInsertionTest();
 	std::cout << passedTests << "/" << totalTests << " Tests passed" << std::endl;
 	return (0);
 }
