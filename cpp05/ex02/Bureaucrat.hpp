@@ -16,9 +16,12 @@ class Bureaucrat {
 						~Bureaucrat();
 		unsigned int	getGrade(void) const;
 		std::string		getName(void) const;
+		/* execution */
 		void			signForm(AForm &form);
+		void			executeForm(AForm const & form) const;
 		void			incrementGrade(const unsigned int amount);
 		void			decrementGrade(const unsigned int amount);
+		/* exceptions */
 		class			GradeTooHighException : public std::exception {
 			public:
 				char const* what() const throw();

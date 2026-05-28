@@ -72,6 +72,7 @@ int	insertionOverloadTest() {
 	return (1);
 }
 
+	/* cannot do anymore, as AForm is abstract now
 int	formCopyConstructorTest() {
 	for (unsigned int i = 1; i < 150; ++i) { 
 		for (unsigned int j = 1; j < 150; ++j) { 
@@ -96,6 +97,7 @@ int	formInsertionTest() {
 }
 
 int	formGradeGettersTest() {
+
 	unsigned int	gradeToSign = 30;
 	unsigned int	gradeToExecute = 1;
 	AForm	a("uninformed uniform form", gradeToSign, gradeToExecute);
@@ -123,8 +125,11 @@ int	formBeSignedTest() {
 	}
 	catch (std::exception const& e){
 	}
+
 	return (1);
+
 }
+	*/
 
 int	main(void) {
 	int	passedTests = 0;
@@ -140,7 +145,7 @@ int	main(void) {
 	passedTests += DecrementGradeTest();
 	//insertion overload
 	passedTests += insertionOverloadTest();
-	/* AForm */
+	/* AFormxx
 	// copy constructor
 	passedTests += formCopyConstructorTest();
 	// parametric constructor
@@ -150,6 +155,7 @@ int	main(void) {
 	passedTests += formGradeGettersTest();
 	// insertion overload
 	passedTests += formInsertionTest();
+	*/
 	std::cout << passedTests << "/" << totalTests << " Tests passed" << std::endl;
 	return (0);
 }

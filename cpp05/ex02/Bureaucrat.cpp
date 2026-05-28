@@ -92,6 +92,16 @@ void	Bureaucrat::signForm(AForm &form) {
 	std::cout << name << " signed " << form.getName() << std::endl;
 }
 
+void	Bureaucrat::executeForm(AForm const &form) const {
+	try {
+		form.execute(*this);
+	}
+	catch (std::exception const& e) {
+		std::cout << name << " couldn't execute " << form.getName();
+		std::cout << " because " << e.what() << std::endl;
+	}
+}
+
 /* Operator overloads */
 Bureaucrat&	Bureaucrat::operator=(const Bureaucrat &src) {
 	if (this != &src) {
