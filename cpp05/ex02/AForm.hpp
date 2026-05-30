@@ -17,7 +17,8 @@ class AForm {
 						~AForm();
 		/* executors */
 		virtual void	beSigned(const Bureaucrat &signer);
-		virtual	void	execute(Bureaucrat const & executor) const = 0;
+		void			execute(Bureaucrat const & executor);
+		virtual void	executedAction(void) = 0;
 		/* getters */
 		unsigned int	getGradeToSign(void) const;
 		unsigned int	getGradeToExecute(void) const;
@@ -32,6 +33,7 @@ class AForm {
 			public:
 				char const* what() const throw();
 		};
+
 	private:
 		std::string const		name;
 		bool					isSigned;

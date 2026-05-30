@@ -63,6 +63,22 @@ void	AForm::beSigned(const Bureaucrat &signer) {
 	else
 		throw AForm::GradeTooLowException();
 }
+/* execute */
+void	AForm::execute(Bureaucrat const &executor) {
+	if (executor.getGrade() > gradeToExecute)
+		throw AForm::GradeTooLowException();
+	else
+	{
+		try
+		{
+			executedAction();
+		}
+		catch (std::exception const& e)
+		{
+			throw e;
+		}
+	}
+}
 
 /* Operator overloads */
 std::ostream &operator<<(std::ostream &out, const AForm &src) {
