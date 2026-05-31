@@ -17,8 +17,8 @@ class AForm {
 						~AForm();
 		/* executors */
 		virtual void	beSigned(const Bureaucrat &signer);
-		void			execute(Bureaucrat const & executor);
-		virtual void	executedAction(void) = 0;
+		void			execute(Bureaucrat const & executor) const;
+		virtual void	executedAction(void) const = 0;
 		/* getters */
 		unsigned int	getGradeToSign(void) const;
 		unsigned int	getGradeToExecute(void) const;

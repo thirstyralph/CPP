@@ -1,13 +1,23 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShruberryCreationForm::ShruberryCreationForm(const std::string &target)
-	: AForm("ShruberryCreationForm", 145, 137),
+/* constructor */
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
+	: AForm("ShrubberyCreationForm", 145, 137),
 	target(target) {}
-	
-void	ShruberryCreationForm::executedAction(){
+
+/* Destructor */
+ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
+
+/* Getters */
+std::string	ShrubberyCreationForm::getTarget(void) const{
+	return (this->target);
+}
+
+/* Custom executed action */
+void	ShrubberyCreationForm::executedAction() const{
 	std::ofstream	file;
 
-	file.open(target + "_shrubbery");
+	file.open(std::string(this->target + "_shrubbery").c_str());
 	if (!file.is_open()) {
 		std::cout << "Error creating file!" << std::endl;
 		return ;
@@ -15,4 +25,3 @@ void	ShruberryCreationForm::executedAction(){
 	file << ASCII_TREES;
 	file.close();
 }
-

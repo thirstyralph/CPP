@@ -1,20 +1,21 @@
-#ifndef SHRUBERRYCREATIONFORM_HPP
-#define SHRUBERRYCREATIONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
 #include <fstream>
 #include "AForm.hpp"
 
-class	ShruberryCreationForm : public AForm {
+class	ShrubberyCreationForm : public AForm {
 	public:
-				ShruberryCreationForm();	
-				ShruberryCreationForm(
-						const std::string &target
-						);
-				~ShruberryCreationForm();
-		ShruberryCreationForm&	operator=(const ShruberryCreationForm &src);
-		void	executedAction(void);
+								ShrubberyCreationForm();
+								ShrubberyCreationForm(
+									const std::string &target
+								);
+								~ShrubberyCreationForm();
+		ShrubberyCreationForm&	operator=(const ShrubberyCreationForm &src);
+		void					executedAction(void) const;
+		std::string				getTarget(void) const;
 	private:
-		const std::string	target;
+		const std::string		target;
 };
 
 
