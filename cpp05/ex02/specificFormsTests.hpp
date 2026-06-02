@@ -1,8 +1,10 @@
 #ifndef SPECIFICFORMSTESTS_HPP
 #define SPECIFICFORMSTESTS_HPP
+
 #include "ShrubberyCreationForm.hpp"
-/*
 #include "RobotomyRequestForm.hpp"
+
+/*
 #include "PresidentialPardonForm.hpp"
 */
 
@@ -10,5 +12,6 @@
 /* Deep copies */
 /* execute */
 int	ShrubberyCreationFormTestSuite(void);
+int	RobotomyRequestFormTestSuite(void);
 
 #endif

@@ -1,5 +1,3 @@
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
 #include "BureaucratTests.hpp"
 #include "specificFormsTests.hpp"
 
@@ -18,6 +16,7 @@ int	main(void) {
 	failedTests += insertionOverloadTest();
 	/* specific forms */
 	failedTests += ShrubberyCreationFormTestSuite();
+	failedTests += RobotomyRequestFormTestSuite();
 	std::cout << failedTests << " Tests failed" << std::endl;
 	return (0);
 }

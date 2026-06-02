@@ -14,7 +14,7 @@ std::string	ShrubberyCreationForm::getTarget(void) const{
 }
 
 /* Custom executed action */
-void	ShrubberyCreationForm::executedAction() const{
+void	ShrubberyCreationForm::executedAction(void) const{
 	std::ofstream	file;
 
 	file.open(std::string(this->target + "_shrubbery").c_str());
