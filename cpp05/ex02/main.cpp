@@ -17,6 +17,7 @@ int	main(void) {
 	/* specific forms */
 	failedTests += ShrubberyCreationFormTestSuite();
 	failedTests += RobotomyRequestFormTestSuite();
+	failedTests += PresidentialPardonFormTestSuite();
 	std::cout << failedTests << " Tests failed" << std::endl;
 	return (0);
 }

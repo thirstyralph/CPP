@@ -43,6 +43,28 @@ int	RobotomyRequestFormExecutedActionTest(void) {
 	return (0);
 }
 
+int	PresidentialPardonFormConstructorTest(void) {
+	PresidentialPardonForm	a("raymond");
+	PresidentialPardonForm	&b = a;
+	PresidentialPardonForm	c(b);
+
+	if (c.getTarget() != a.getTarget())
+		return 1;
+	return (0);
+}
+
+int	PresidentialPardonFormExecutedActionTest(void) {
+	PresidentialPardonForm	a("paco");
+
+	try {
+		a.executedAction();
+	}
+	catch (std::exception &e) {
+		return (1);	
+	}
+	return (0);
+}
+
 int	ShrubberyCreationFormTestSuite(void) {
 	int	failedTests = 0;
 
@@ -61,3 +83,10 @@ int	RobotomyRequestFormTestSuite(void) {
 	return failedTests;
 }
 
+int	PresidentialPardonFormTestSuite(void) {
+	int	failedTests = 0;
+
+	failedTests += PresidentialPardonFormConstructorTest();
+	failedTests += PresidentialPardonFormExecutedActionTest();
+	return failedTests;
+}
