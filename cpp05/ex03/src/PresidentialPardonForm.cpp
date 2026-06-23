@@ -9,7 +9,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
 PresidentialPardonForm::~PresidentialPardonForm(void) {}
 
 /* Getters */
-std::string	PresidentialPardonForm::getTarget(void) const{
+const std::string	&PresidentialPardonForm::getTarget(void) const{
 	return (this->target);
 }
 

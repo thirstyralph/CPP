@@ -23,6 +23,7 @@ class AForm {
 		unsigned int	getGradeToSign(void) const;
 		unsigned int	getGradeToExecute(void) const;
 		std::string		getName(void) const;
+		virtual const std::string	&getTarget(void) const = 0;
 		bool			getIsSigned();
 		/* Exceptions */
 		class			GradeTooHighException : public std::exception {

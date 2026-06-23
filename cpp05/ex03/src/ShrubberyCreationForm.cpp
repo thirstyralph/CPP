@@ -9,7 +9,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
 
 /* Getters */
-std::string	ShrubberyCreationForm::getTarget(void) const{
+const std::string	&ShrubberyCreationForm::getTarget(void) const{
 	return (this->target);
 }
 

@@ -9,7 +9,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
 RobotomyRequestForm::~RobotomyRequestForm(void) {}
 
 /* Getters */
-std::string	RobotomyRequestForm::getTarget(void) const{
+const std::string	&RobotomyRequestForm::getTarget(void) const{
 	return (this->target);
 }
 
