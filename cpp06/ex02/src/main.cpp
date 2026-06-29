@@ -35,6 +35,28 @@ Base * generate(void) {
 	return (ret);
 }
 
+void identify(Base& p) {
+	A	aReference;
+	B	bReference;
+	C	cReference;
+
+	if (dynamic_cast<A *>(&p) != NULL)
+	{
+		std::cout << "yeah it's an A" << std::endl;
+		return ;
+	}
+	if (dynamic_cast<B *>(&p) != NULL)
+	{
+		std::cout << "yeah it's a B" << std::endl;
+		return ;
+	}
+	if (dynamic_cast<C*>(&p) != NULL)
+	{
+		std::cout << "yeah it's a C" << std::endl;
+		return ;
+	}
+}
+
 void identify(Base* p) {
 	A	aReference;
 	B	bReference;
@@ -60,9 +82,12 @@ void identify(Base* p) {
 int	main(void) {
 	Base *inst;
 
+
 	for (int i = 0; i < 90; ++i) {
 		inst = generate();
+		Base& instRef = *inst;
 		identify(inst);
+		identify(instRef);
 		delete inst;
 	}
 	return (0);
