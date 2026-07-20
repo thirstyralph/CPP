@@ -1,0 +1,22 @@
+[
+  {
+    "file": "src/ScalarConverter.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wextra",
+      "-Wall",
+      "-Werror",
+      "-g",
+      "-I.",
+      "-I./include",
+      "-std=c++98",
+      "-I./include",
+      "-c",
+      "src/ScalarConverter.cpp",
+      "-o",
+      "obj/ScalarConverter.o"
+    ],
+    "directory": "/home/rps/cpp/cpp06",
+    "output": "obj/ScalarConverter.o"
+  }
+]

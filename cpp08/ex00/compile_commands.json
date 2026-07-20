@@ -1,0 +1,22 @@
+[
+  {
+    "file": "src/main.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wextra",
+      "-Wall",
+      "-Werror",
+      "-g",
+      "-I.",
+      "-I./include",
+      "-std=c++98",
+      "-I./include",
+      "-c",
+      "src/main.cpp",
+      "-o",
+      "obj/main.o"
+    ],
+    "directory": "/home/rps/cpp/cpp08/ex00",
+    "output": "obj/main.o"
+  }
+]
