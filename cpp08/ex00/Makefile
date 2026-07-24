@@ -4,10 +4,11 @@ CXXFLAGS := -Wextra -Wall -Werror -g -I. -I./include -std=c++98 -I./include
 
 OBJ_DIR := obj
 SRC_DIR := src
+INC_DIR	:= include
 
 SRCS    := $(wildcard $(SRC_DIR)/*.cpp)
 OBJS    := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
-HEADERS := $(wildcard include/*.hpp)
+HEADERS := $(wildcard $(INC_DIR)/*.hpp)
 
 all: $(NAME)
 

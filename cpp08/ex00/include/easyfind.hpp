@@ -5,4 +5,5 @@
 template <typename T>
 unsigned int easyfind(const T &cont, int n);
 
+#include "easyfind.tpp"
 #endif

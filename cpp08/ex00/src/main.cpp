@@ -1,9 +1,23 @@
 #include "easyfind.hpp"
+#include <cstdlib>
+#include <ctime>
 #include <vector>
 
+
+
 int main(void) {
-	std::vector<int>	v;
-	std::fill(v.begin(), v.end(), 8);
-	std::cout << easyfind(v, 8);
+	int	size = 100;
+	std::vector<int>	v(size);
+
+
+	srand(time(0));
+	for (int i = 0; i < size; ++i) {
+		v[i] = (rand() % 100);
+	}
+	try {
+		std::cout << easyfind(v, rand() % size) << std::endl;
+	}
+	catch(const std::invalid_argument &e) {
+	}
 	return (0);
 }
