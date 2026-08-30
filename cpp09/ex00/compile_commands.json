@@ -1,0 +1,42 @@
+[
+  {
+    "file": "src/btc.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wextra",
+      "-Wall",
+      "-Werror",
+      "-g",
+      "-I.",
+      "-I./include",
+      "-std=c++98",
+      "-I./include",
+      "-c",
+      "src/btc.cpp",
+      "-o",
+      "obj/btc.o"
+    ],
+    "directory": "/home/rps/cpp/cpp09/ex00",
+    "output": "obj/btc.o"
+  },
+  {
+    "file": "src/main.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wextra",
+      "-Wall",
+      "-Werror",
+      "-g",
+      "-I.",
+      "-I./include",
+      "-std=c++98",
+      "-I./include",
+      "-c",
+      "src/main.cpp",
+      "-o",
+      "obj/main.o"
+    ],
+    "directory": "/home/rps/cpp/cpp09/ex00",
+    "output": "obj/main.o"
+  }
+]
