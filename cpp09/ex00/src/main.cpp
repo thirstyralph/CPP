@@ -61,8 +61,32 @@ void	ingestLine(std::string line, std::map<std::string, double>& map, char separ
 	map.insert(std::make_pair(left, std::atof(right.c_str())));
 }
 
-std::map<std::string, double> ingestInput(char *filename){
-	std::map<std::string, double>	out;
+void	processLine(std::string line, std::map<std::string, double>& data, char separator) {
+	size_t	p = line.find(separator);
+	if (p == std::string::npos) //no separator
+		return;
+
+	std::map<std::string, double>::const_iterator	dataIt;
+
+	std::string	left = line.substr(0, p);
+	std::string	right = line.substr(p + 1);
+
+	dataIt = data.begin();
+	while(dataIt != data.end() && dataIt->first.compare(left) <= 0) {
+	++dataIt;
+	}
+	if (dataIt != data.begin()) {
+		--dataIt;
+		std::cout
+			<< left
+			<< "=> "
+			<< right
+			<< " = "
+			<< std::atof(right.c_str()) * dataIt->second << std::endl;
+	}
+}
+
+void processInput(char *filename, std::map<std::string, double> &data){
 	std::ifstream					file;
 	std::string						line;
 
@@ -72,11 +96,9 @@ std::map<std::string, double> ingestInput(char *filename){
 	}
 	while (getline(file, line) ) {
 		if (validateLine(line))
-			ingestLine(line, out, '|');
+			processLine(line, data, '|');
 	}
-
 	file.close();
-	return (out);
 }
 
 std::map<std::string, double> ingestData(void){
@@ -103,24 +125,10 @@ int	main(int argc, char **argv) {
 		std::cout << "Error: could not open file" << std::endl;
 		return (0);
 	}
-	/* input validation */
-	std::map<std::string, double>			inputMap = ingestInput(argv[1]);
-	std::map<std::string, double>			dataMap = ingestData();
-	std::map<std::string, double>::const_iterator	inputIt;
-	std::map<std::string, double>::const_iterator	dataIt;
 
-	std::cout << "printing input" << std::endl;
-	for (inputIt = inputMap.begin(); inputIt != inputMap.end(); ++inputIt) {
-		dataIt = dataMap.begin();
-		while(dataIt != dataMap.end() && dataIt->first.compare(inputIt->first) <= 0) {
-		++dataIt;
-		}
-		if (dataIt != dataMap.begin()) {
-			--dataIt;
-		std::cout << "data date: " << dataIt->first
-			<< " input date : " << inputIt->first
-			<< inputIt->second * dataIt->second << std::endl;
-		}
-	}
+	/* input validation */
+	std::map<std::string, double>			dataMap = ingestData();
+	processInput(argv[1], dataMap);
+
 	return (0);
 }
