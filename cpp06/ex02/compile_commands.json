@@ -1,6 +1,6 @@
 [
   {
-    "file": "src/ScalarConverter.cpp",
+    "file": "src/Base.cpp",
     "arguments": [
       "/usr/bin/c++",
       "-Wextra",
@@ -12,11 +12,31 @@
       "-std=c++98",
       "-I./include",
       "-c",
-      "src/ScalarConverter.cpp",
+      "src/Base.cpp",
       "-o",
-      "obj/ScalarConverter.o"
+      "obj/Base.o"
     ],
-    "directory": "/home/rps/cpp/cpp06",
-    "output": "obj/ScalarConverter.o"
+    "directory": "/home/rps/cpp/cpp06/ex02",
+    "output": "obj/Base.o"
+  },
+  {
+    "file": "src/main.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wextra",
+      "-Wall",
+      "-Werror",
+      "-g",
+      "-I.",
+      "-I./include",
+      "-std=c++98",
+      "-I./include",
+      "-c",
+      "src/main.cpp",
+      "-o",
+      "obj/main.o"
+    ],
+    "directory": "/home/rps/cpp/cpp06/ex02",
+    "output": "obj/main.o"
   }
 ]

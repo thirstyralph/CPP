@@ -1,6 +1,6 @@
 [
   {
-    "file": "src/ScalarConverter.cpp",
+    "file": "src/main.cpp",
     "arguments": [
       "/usr/bin/c++",
       "-Wextra",
@@ -12,11 +12,31 @@
       "-std=c++98",
       "-I./include",
       "-c",
-      "src/ScalarConverter.cpp",
+      "src/main.cpp",
       "-o",
-      "obj/ScalarConverter.o"
+      "obj/main.o"
     ],
-    "directory": "/home/rps/cpp/cpp06",
-    "output": "obj/ScalarConverter.o"
+    "directory": "/home/rps/cpp/cpp06/ex01",
+    "output": "obj/main.o"
+  },
+  {
+    "file": "src/Serializer.cpp",
+    "arguments": [
+      "/usr/bin/c++",
+      "-Wextra",
+      "-Wall",
+      "-Werror",
+      "-g",
+      "-I.",
+      "-I./include",
+      "-std=c++98",
+      "-I./include",
+      "-c",
+      "src/Serializer.cpp",
+      "-o",
+      "obj/Serializer.o"
+    ],
+    "directory": "/home/rps/cpp/cpp06/ex01",
+    "output": "obj/Serializer.o"
   }
 ]

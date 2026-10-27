@@ -2,8 +2,10 @@
 
 
 int	main(int argc, char **argv) {
-	if (argc < 2)
+	if (argc < 2) {
+		std::cout << "[this program takes an arbitrary list of numbers as argument]" << std::endl;
 		return (1);
+	}
 	for (int i = 1; i < argc; ++i) {
 		std::cout << "==== Literal: " << argv[i] << " ====" << std::endl;
 		std::string	literal = argv[i];

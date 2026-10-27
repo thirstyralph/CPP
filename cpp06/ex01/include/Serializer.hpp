@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iostream>
 
+// Debug data structure
 struct t_data{
 	t_data(int sa, int fm, int rm, int t);
 	int	surfaceArea;
